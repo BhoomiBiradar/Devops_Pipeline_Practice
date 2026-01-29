@@ -36,12 +36,12 @@ pipeline {
 
     stage('Docker Login') {
       steps {
-        // Secure login using Jenkins credentials
         withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKERHUB_CREDS_USR', passwordVariable: 'DOCKERHUB_CREDS_PSW')]) {
-          sh 'echo $DOCKERHUB_CREDS_PSW | docker login -u $DOCKERHUB_CREDS_USR --password-stdin'
+        sh 'echo $DOCKERHUB_CREDS_PSW | docker login -u $DOCKERHUB_CREDS_USR --password-stdin'
         }
       }
     }
+
 
     stage('Docker Push') {
       steps {
