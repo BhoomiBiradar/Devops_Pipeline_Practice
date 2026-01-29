@@ -20,11 +20,11 @@ pipeline {
       }
     }
 
-    stage('Deploy Artifact') {
-      steps {
-        sh 'mvn deploy'
-      }
-    }
+//     stage('Deploy Artifact') {
+//       steps {
+//         sh 'mvn deploy'
+//       }
+//     }
 
     stage('Docker Build') {
       steps {
