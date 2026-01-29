@@ -29,7 +29,8 @@ pipeline {
     stage('Docker Build') {
       steps {
         // Build Docker image with Jenkins build number as tag
-        sh 'docker build -t bhoomirb/jenkinstest:$BUILD_NUMBER ./pushdockerimage/'
+        sh 'docker build -t bhoomirb/jenkinstest:$BUILD_NUMBER .'
+
       }
     }
 
